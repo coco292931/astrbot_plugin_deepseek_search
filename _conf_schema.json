@@ -1,9 +1,20 @@
 {
-  "llm_provider_id": {
-    "description": "用于联网搜索的 LLM Provider ID（平台名/模型名，如 deepseek/deepseek-v4-flash）",
-    "hint": "填写 AstrBot 已配置的 provider_id 格式（平台名/模型名）",
+  "api_key": {
+    "description": "可选，DeepSeek API Key；留空则读取环境变量 DEEPSEEK_API_KEY",
+    "hint": "格式 sk-...，留空时自动读取环境变量 DEEPSEEK_API_KEY",
     "type": "string",
-    "default": "deepseek/deepseek-v4-flash",
-    "_special": "select_provider"
+    "default": ""
+  },
+  "api_base": {
+    "description": "可选，Anthropic 兼容 API 地址，默认 dsh 端点",
+    "hint": "默认 https://api.deepseek.com/anthropic/v1",
+    "type": "string",
+    "default": "https://api.deepseek.com/anthropic/v1"
+  },
+  "model": {
+    "description": "可选，模型名，默认 deepseek-v4-flash",
+    "hint": "需支持 web_search_20250305 工具",
+    "type": "string",
+    "default": "deepseek-v4-flash"
   }
 }
