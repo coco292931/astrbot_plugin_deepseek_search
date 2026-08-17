@@ -1,17 +1,9 @@
 {
-  "api_key": {
-    "description": "DeepSeek API Key（可选，优先级低于环境变量 DEEPSEEK_API_KEY）",
+  "llm_provider_id": {
+    "description": "用于联网搜索的 LLM Provider ID（平台名/模型名，如 deepseek/deepseek-v4-flash）",
+    "hint": "填写 AstrBot 已配置的 provider_id 格式（平台名/模型名）",
     "type": "string",
-    "default": ""
-  },
-  "base_url": {
-    "description": "DeepSeek API 地址",
-    "type": "string",
-    "default": "https://api.deepseek.com"
-  },
-  "model": {
-    "description": "模型，可选 deepseek-chat / deepseek-v4-flash / deepseek-v4-pro",
-    "type": "string",
-    "default": "deepseek-chat"
+    "default": "deepseek/deepseek-v4-flash",
+    "_special": "select_provider"
   }
 }

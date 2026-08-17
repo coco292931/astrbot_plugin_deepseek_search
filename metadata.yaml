@@ -1,6 +1,6 @@
 name: astrbot_plugin_deepseek_search
-desc: 让 AstrBot LLM 接入 DeepSeek 官方搜索工具（web_search）
-help: 注册 llm_tool deepseek_web_search，LLM 可自动调用联网搜索并带引用来源
-version: v0.1.0
+desc: 让 AstrBot LLM 接入 DeepSeek 官方联网搜索工具 web_search（provider 模式）
+help: 注册 llm_tool web_search，LLM 可自动调用 DeepSeek 联网搜索并返回带 Sources 的结果；模型走 AstrBot provider 机制
+version: v0.2.0
 author: coco292931
 repo: https://github.com/coco292931/astrbot_plugin_deepseek_search
