@@ -18,15 +18,15 @@ SEARCH_TIMEOUT_S = SEARCH_TIMEOUT_MS / 1000
 DEEPSEEK_DEFAULT_BASE_URL = "https://api.deepseek.com/anthropic/v1"  # /messages 由调用方拼接
 DEEPSEEK_DEFAULT_MODEL = "deepseek-v4-flash"
 DEEPSEEK_DEFAULT_API_VERSION = "2023-06-01"
-DEEPSEEK_DEFAULT_MAX_TOKENS = 1024
-DEEPSEEK_DEFAULT_MAX_USES = 3
+DEEPSEEK_DEFAULT_MAX_TOKENS = 4096
+DEEPSEEK_DEFAULT_MAX_USES = 5
 DEEPSEEK_KEY_ENV = "DEEPSEEK_API_KEY"
 DEEPSEEK_USER_AGENT = "deepseek-harness/0.0.1"
 
 
 @register(PLUGIN_NAME, "coco292931",
           "让 AstrBot LLM 接入 DeepSeek 官方联网搜索（web_search，dsh 方案）",
-          "0.3.0",
+          "0.3.1",
           "https://github.com/coco292931/astrbot_plugin_deepseek_search")
 class DeepSeekSearchPlugin(Star):
     """接入 DeepSeek 官方联网搜索（web_search）的 AstrBot 插件。
@@ -78,7 +78,13 @@ class DeepSeekSearchPlugin(Star):
         payload = {
             "model": self.model,
             "max_tokens": DEEPSEEK_DEFAULT_MAX_TOKENS,
-            "messages": [{"role": "user", "content": query}],
+            "messages": [{
+                "role": "user",
+                "content": [{
+                    "type": "text",
+                    "text": f"Perform a web search for the query: {query}"
+                }]
+            }],
             "tools": [{
                 "type": "web_search_20250305",
                 "name": "web_search",
