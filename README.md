@@ -1,0 +1,2 @@
+# astrbot_plugin_deepseek_search
+让astrbot llm接入deepseek 官方搜索工具
