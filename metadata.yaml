@@ -2,5 +2,5 @@ name: astrbot_plugin_deepseek_search
 desc: 让 AstrBot LLM 接入 DeepSeek 官方联网搜索工具 web_search（dsh 方案）
 help: 注册 llm_tool web_search，LLM 可自动调用 DeepSeek 联网搜索并返回带 Sources 的结果；直连 Anthropic 兼容 Messages API 触发原生搜索
 version: v0.3.1
-author: coco292931
+author: koko、coco、犟犟
 repo: https://github.com/coco292931/astrbot_plugin_deepseek_search
