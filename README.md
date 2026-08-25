@@ -2,7 +2,7 @@
 让 AstrBot LLM 接入 DeepSeek 官方联网搜索工具（web_search，dsh 方案）。
 
 ## 使用
-1. 安装插件（放入 /AstrBot/data/plugins/ 并加载）。
+1. 安装插件。
 2. 配置 API Key：优先填插件配置 `api_key`，留空则自动读取环境变量 `DEEPSEEK_API_KEY`。
 3. 插件自动注册 LLM 工具 `web_search(query)`，模型在需要实时信息时自动调用。
 4. 返回结果严格对齐 DeepSeek Harness（dsh）的 web_search 规范：
